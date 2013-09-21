@@ -8,15 +8,15 @@ If I can get the other one to work eventually, I'll retire this one.
 
 ## Installation
 
-To install the 'sec_query' Ruby Gem run the following command at the terminal prompt.
+To install the 'sec_entities' Ruby Gem run the following command at the terminal prompt.
 
 `gem install sec_entities`
 
-For an example of what type of information 'sec_query' can retrieve, run the following command:
+For an example of what type of information 'sec_entities' can retrieve, run the following command:
 
 `bundle exec rspec spec`
 
-If running 'sec_query' from the command prompt in irb:
+If running 'sec_entities' from the command prompt in irb:
 
 `irb -rubygems`
 

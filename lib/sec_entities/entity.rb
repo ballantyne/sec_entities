@@ -1,28 +1,7 @@
-module SecQuery
+module Sec
     class Entity
 
         attr_accessor :first, :middle, :last, :name, :symbol, :cik, :url, :type, :sic, :location, :state_of_inc, :formerly, :mailing_address, :business_address, :relationships, :transactions, :filings
-        
-        # def initialize(entity)
-        #     @first = entity[:first]
-        #     @middle = entity[:middle]
-        #     @last = entity[:last]
-        #     @name = entity[:name]
-        #     @sic = entity[:sic]
-        #     @url = entity[:url]
-        #     @location = entity[:location]
-        #     @state_of_inc = entity[:state_of_inc]
-        #     @formerly = entity[:formerly]
-        #     @symbol = entity[:symbol]
-        #     @cik = entity[:cik]
-        #     @type =entity[:type]
-        #     @mailing_address = entity[:mailing_address]
-        #     @business_address = entity[:business_address]
-        #     @relationships = entity[:relationships]
-        #     @transactions = entity[:transactions]
-        #     @filings = entity[:filings]
-        # end
-   
 
         def self.find(entity_args, *options)
             Entity.cik(Entity.url(entity_args), entity_args)

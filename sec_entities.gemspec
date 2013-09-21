@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 
-require "sec_query/version"
-require "sec_query"
+require "sec_entities/version"
+require "sec_entities"
 
 Gem::Specification.new do |s|
   s.name        = "sec_entities"
   s.version     = SecQuery::VERSION
   s.authors     = ["Ty Rauber"]
   s.email       = ["tyrauber@mac.com"]
-  s.homepage    = "https://github.com/tyrauber/sec_query"
+  s.homepage    = "https://github.com/ballantyne/sec_entities"
   s.summary     = "A ruby gem for querying the United States Securities and Exchange Commission Edgar System."
-  s.description = "Search for company or person, by name, symbol or Central Index Key (CIK), and retrieve relationships, transactions and filings."
+  s.description = "This gem was originally made by Ty Rauber and had more functions, but I couldn't get to work and I didn't need all of the functions so I made it work for what I needed."
 
   s.rubyforge_project = "sec_query"
 
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
    s.add_development_dependency "rspec"
    s.add_runtime_dependency "rest-client"
-   s.add_runtime_dependency "hpricot"
    s.add_runtime_dependency "nokogiri"
    s.add_runtime_dependency "hashie"
    s.add_runtime_dependency "crack"

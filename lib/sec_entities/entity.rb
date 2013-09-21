@@ -60,7 +60,7 @@ module Sec
                     doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//company-info').to_s))
                 end
                 if e.xpath('//content/accession-nunber').to_s.length > 0
-                    doc = Crack::XML.parse(e.xpath('//content').to_s).collect {|k, v| v }
+                    doc = Crack::XML.parse(e.xpath('//content').to_s).collect {|k, v| Hashie::Mash.new(v) }
                 end
                 
                 entries << doc

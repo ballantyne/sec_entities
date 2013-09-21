@@ -28,7 +28,7 @@ If running 'sec_entities' from the command prompt in irb:
 
 #### By Name:
 
-Sec::Entity.find("WEYEHAUSER")
+Sec::Entity.find("WEYERHAUSER")
 
 
 ## License

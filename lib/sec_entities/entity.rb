@@ -54,10 +54,10 @@ module Sec
             Nokogiri::HTML(response).xpath('//feed/entry').each do |e|
                 # e.remove_namespaces!('link')
                 if e.xpath('//content/company-info').to_s.length > 0
-                    doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//content/company-info').to_s))
+                    doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//content/company-info').to_s)['company_info'])
                 end
                 if e.xpath('//company-info').to_s.length > 0
-                    doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//company-info').to_s))
+                    doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//company-info').to_s)['company_info'])
                 end
                 if e.xpath('//content/accession-nunber').to_s.length > 0
                     doc = Crack::XML.parse(e.xpath('//content').to_s).collect {|k, v| Hashie::Mash.new(v) }

@@ -5,7 +5,7 @@ require "sec_query/version"
 require "sec_query"
 
 Gem::Specification.new do |s|
-  s.name        = "sec_query"
+  s.name        = "sec_entities"
   s.version     = SecQuery::VERSION
   s.authors     = ["Ty Rauber"]
   s.email       = ["tyrauber@mac.com"]

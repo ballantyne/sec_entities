@@ -30,7 +30,6 @@ If running 'sec_entities' from the command prompt in irb:
 
 Sec::Entity.find("WEYERHAUSER")
 
-
 ## License
 
 Copyright (c) 2011 Ty Rauber

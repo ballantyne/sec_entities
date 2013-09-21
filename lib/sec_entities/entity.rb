@@ -49,15 +49,23 @@ module Sec
 
     def self.lookup(url, entity)
       response = Entity.query(url+"&output=atom")
+      # puts response.to_s
       entries = []
-      Nokogiri::HTML(response).xpath('//feed/entry').each do |e|
-        doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//content/company-info').to_s)['company_info']) if e.xpath('//content/company-info').to_s.length > 0
-        doc = Hashie::Mash.new(Crack::XML.parse(e.xpath('//company-info').to_s)['company_info'])         if e.xpath('//company-info').to_s.length > 0
-        doc = Crack::XML.parse(e.xpath('//content').to_s).collect {|k, v| Hashie::Mash.new(v) }          if e.xpath('//content/accession-nunber').to_s.length > 0
-        entries << doc
+      doc = Hashie::Mash.new
+      content = []
+      document = Nokogiri::HTML(response)
+      company_info = Crack::XML.parse(document.xpath('//feed/company-info').to_s)['company_info']   if document.xpath('//feed/company-info').to_s.length > 0
+      company_info = Crack::XML.parse(document.xpath('//content/company-info').to_s)['company_info'] if document.xpath('//feed/entry/content/company-info').to_s.length > 0
+      doc.company_info = company_info
+      if document.xpath('//feed/entry').to_s.length > 0
+        document.xpath('//feed/entry/content').each do |e|
+          content << Crack::XML.parse(e.to_s)['content'] if e.xpath('//content/accession-nunber').to_s.length > 0
+        end
       end
+      
+      doc.filings = content  if content.size > 0
 
-      return entries
+      return doc
     end
   end
 end

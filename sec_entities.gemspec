@@ -1,12 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 
-require "sec_entities/version"
-require "sec_entities"
-
 Gem::Specification.new do |s|
   s.name        = "sec_entities"
-  s.version     = SecQuery::VERSION
+  s.version     = "0.0.10"
   s.authors     = ["Ty Rauber"]
   s.email       = ["tyrauber@mac.com"]
   s.homepage    = "https://github.com/ballantyne/sec_entities"
@@ -22,7 +19,7 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
    s.add_development_dependency "rspec"
-   s.add_runtime_dependency "rest-client"
+   s.add_runtime_dependency "rest-client", "2.1.0"
    s.add_runtime_dependency "nokogiri"
    s.add_runtime_dependency "hashie"
    s.add_runtime_dependency "crack"
